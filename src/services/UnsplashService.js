@@ -1,12 +1,15 @@
 import handleUnsplashData from '../utils/handleUnsplashData';
 
-export default async function requestUnsplash(query) {
-  const res = await fetch(`https://api.unsplash.com/photos/?${query}`, {
-    headers: {
-      Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
-      'Content-Type': 'application/json',
-    },
-  });
+const url = 'https://api.unsplash.com/photos/random/?';
+const headers = {
+  headers: {
+    Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
+    'Content-Type': 'application/json',
+  },
+};
+
+export default async function requestUnsplash(query, count) {
+  const res = await fetch(`${url}count=${count}&query=${query}`, headers);
 
   let data = await res.json();
 

@@ -5,6 +5,7 @@ export default function App() {
   const [collection, setCollection] = useState([]);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [count, setCount] = useState(30);
 
   return (
     <>
@@ -15,6 +16,7 @@ export default function App() {
         setSearch={setSearch}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
+        count={count}
       />
     </>
   );

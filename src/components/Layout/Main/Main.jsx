@@ -10,6 +10,7 @@ export default function Main({
   setSearch,
   isLoading,
   setIsLoading,
+  count,
 }) {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Main({
           setSearch={setSearch}
           setCollection={setCollection}
           setIsLoading={setIsLoading}
+          count={count}
         />
         <Loading isLoading={isLoading} />
         <CollectionList collection={collection} />

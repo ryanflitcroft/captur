@@ -6,6 +6,7 @@ export default function SearchBar({
   setSearch,
   setCollection,
   setIsLoading,
+  count,
 }) {
   function handleChange(e) {
     setSearch(e.target.value);
@@ -14,7 +15,7 @@ export default function SearchBar({
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    const collection = await requestUnsplash(search);
+    const collection = await requestUnsplash(search, count);
     setCollection(collection);
     setIsLoading(false);
   }

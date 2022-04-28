@@ -10,6 +10,7 @@ export default function Layout({
   setSearch,
   isLoading,
   setIsLoading,
+  count,
 }) {
   return (
     <>
@@ -21,6 +22,7 @@ export default function Layout({
         setSearch={setSearch}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
+        count={count}
       />
       <Footer />
     </>
