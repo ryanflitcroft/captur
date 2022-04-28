@@ -1,14 +1,28 @@
 import { useState, useEffect } from 'react';
+import requestUnsplash from './services/UnsplashService';
+import randomNum from './utils/randomNum';
 import Layout from './views/Layout/Layout';
 
 export default function App() {
   const [collection, setCollection] = useState([]);
-  const [headerImg, setHeaderImg] = useState(
-    'https://images.unsplash.com/photo-1573828562803-1d582aa6ab6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM2MzV8MHwxfHNlYXJjaHwxfHxwb3J0bGFuZHxlbnwwfHx8fDE2NTExNzg2MDc&ixlib=rb-1.2.1&q=80&w=1080'
-  );
+  const [headerImg, setHeaderImg] = useState('');
   const [search, setSearch] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [count, setCount] = useState(30);
+
+  const defaultQuery = ['Portland', 'Oregon', 'PNW'];
+
+  useEffect(() => {
+    async function getdata() {
+      const collectionData = await requestUnsplash(
+        defaultQuery[randomNum(defaultQuery.length)],
+        count
+      );
+      setHeaderImg(collectionData[randomNum(count)].imageUrlSm);
+      setCollection(collectionData);
+    }
+    getdata();
+  }, []);
 
   return (
     <>
