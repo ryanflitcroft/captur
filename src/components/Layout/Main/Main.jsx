@@ -18,7 +18,7 @@ export default function Main({
           search={search}
           setSearch={setSearch}
           setCollection={setCollection}
-          isLoading={setIsLoading}
+          setIsLoading={setIsLoading}
         />
         <Loading isLoading={isLoading} />
         <CollectionList collection={collection} />
