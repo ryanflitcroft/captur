@@ -1,10 +1,11 @@
 import React from 'react';
+import './Header.css';
 
-export default function Header() {
+export default function Header({ headerImg }) {
   return (
     <>
       <header>
-        <h1>Developr</h1>
+        <h1 style={{ backgroundImage: `url(${headerImg})` }}>DEVELOPr</h1>
       </header>
     </>
   );

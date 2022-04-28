@@ -6,6 +6,7 @@ import Footer from '../../components/Layout/Footer/Footer';
 export default function Layout({
   collection,
   setCollection,
+  headerImg,
   search,
   setSearch,
   isLoading,
@@ -14,7 +15,7 @@ export default function Layout({
 }) {
   return (
     <>
-      <Header />
+      <Header headerImg={headerImg} />
       <Main
         collection={collection}
         setCollection={setCollection}
