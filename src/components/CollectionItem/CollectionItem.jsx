@@ -21,6 +21,7 @@ export default function CollectionItem({ item }) {
           to={{ pathname: item.imageLink }}
           target="_blank"
           rel="noopener noreferrer"
+          title={'View on Unsplash'}
         >
           <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
         </Link>
@@ -33,6 +34,7 @@ export default function CollectionItem({ item }) {
               }}
               target="_blank"
               rel="noopener noreferrer"
+              title={`Instagram: @${item.artistInstagram}`}
             >
               <span>{artist}</span>
             </Link>

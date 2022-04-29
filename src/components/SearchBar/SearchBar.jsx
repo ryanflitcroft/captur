@@ -29,7 +29,7 @@ export default function SearchBar({
         onSubmit={handleSubmit}
       >
         <label htmlFor="search">
-          Browse <strong>Unsplash</strong> images:
+          Browse <span>Unsplash</span> images:
         </label>
         <input
           name="search"

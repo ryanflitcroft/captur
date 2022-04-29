@@ -5,7 +5,7 @@ import Layout from './views/Layout/Layout';
 
 export default function App() {
   const [collection, setCollection] = useState([]);
-  const [headerImg, setHeaderImg] = useState('');
+  const [headerImg, setHeaderImg] = useState({});
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [count, setCount] = useState(30);
@@ -19,7 +19,7 @@ export default function App() {
         defaultQuery[randomNum(defaultQuery.length)],
         count
       );
-      setHeaderImg(collectionData[randomNum(count)].imageUrlSm);
+      setHeaderImg(collectionData[randomNum(count)]);
       setCollection(collectionData);
       setIsLoading(false);
     }
