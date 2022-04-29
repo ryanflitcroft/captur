@@ -3,6 +3,13 @@ import requestUnsplash from './services/UnsplashService';
 import randomNum from './utils/randomNum';
 import Layout from './views/Layout/Layout';
 
+const query = window.matchMedia('(prefers-color-scheme: dark)');
+query.matches;
+query.addEventListener('change', (res) => {
+  console.log(res);
+  res.matches;
+});
+
 export default function App() {
   const [collection, setCollection] = useState([]);
   const [headerImg, setHeaderImg] = useState({});
@@ -19,8 +26,8 @@ export default function App() {
         defaultQuery[randomNum(defaultQuery.length)],
         count
       );
-      setHeaderImg(collectionData[randomNum(count)]);
       setCollection(collectionData);
+      setHeaderImg(collectionData[randomNum(count)]);
       setIsLoading(false);
     }
     getdata();

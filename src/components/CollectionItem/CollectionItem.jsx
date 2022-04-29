@@ -26,21 +26,19 @@ export default function CollectionItem({ item }) {
           <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
         </Link>
         <figcaption>
-          {`${alt} by `}
-          {item.artistInstagram ? (
-            <Link
-              to={{
-                pathname: `https://www.instagram.com/${item.artistInstagram}/`,
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`Instagram: @${item.artistInstagram}`}
-            >
-              <span>{artist}</span>
-            </Link>
-          ) : (
+          {alt}
+          <br />
+          {' by '}
+          <Link
+            to={{
+              pathname: item.artistUnsplash,
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`View ${item.artistNameFirst} on Unsplash`}
+          >
             <span>{artist}</span>
-          )}
+          </Link>
         </figcaption>
       </figure>
     </>

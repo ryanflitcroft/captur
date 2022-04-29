@@ -1,4 +1,11 @@
-main {
-  margin: 0 1em;
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+@media (prefers-color-scheme: light) {
+  main {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #c6cdd7 100%);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+  background-image: linear-gradient(to top, #484848 0%, #818181 100%);
+}
 }

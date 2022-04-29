@@ -14,5 +14,6 @@ export default function handleUnsplashData(data) {
     artistNameLast: item.user.last_name,
     artistLink: item.user.links.html,
     artistInstagram: item.user.instagram_username,
+    artistUnsplash: item.user.links.html,
   }));
 }

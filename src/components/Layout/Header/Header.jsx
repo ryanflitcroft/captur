@@ -8,10 +8,10 @@ export default function Header({ headerImg }) {
         <h1
           style={{
             backgroundImage: `url(${headerImg.imageUrlSm})`,
-            filter: `drop-shadow(2px 2px 10px ${headerImg.color})`,
+            filter: `drop-shadow(1px 1px 5px ${headerImg.color}`,
           }}
         >
-          CAPTUr
+          CAPTUR
         </h1>
       </header>
     </>
