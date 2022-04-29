@@ -24,3 +24,18 @@ figcaption {
   max-height: 2.75em;
   overflow-y: scroll;
 }
+
+figcaption a {
+  text-decoration: none;
+  /* background-image: linear-gradient(transparent 0%, transparent 90%, hotpink 90%, hotpink 100%); */
+
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position-x: right;
+  transition: background-size 300ms;
+}
+
+figcaption a:hover {
+  background-size: 100% 100%;
+  background-position-x: left;
+}

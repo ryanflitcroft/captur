@@ -36,6 +36,9 @@ export default function CollectionItem({ item }) {
             target="_blank"
             rel="noopener noreferrer"
             title={`View ${item.artistNameFirst} on Unsplash`}
+            style={{
+              backgroundImage: `linear-gradient(transparent 0%, transparent 90%, ${item.color} 90%, ${item.color} 100%)`,
+            }}
           >
             <span>{artist}</span>
           </Link>
