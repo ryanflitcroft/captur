@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../../components/Layout/Header/Header';
 import Main from '../../components/Layout/Main/Main';
 import Footer from '../../components/Layout/Footer/Footer';
@@ -17,15 +18,21 @@ export default function Layout({
   return (
     <>
       <Header headerImg={headerImg} />
-      <Main
-        collection={collection}
-        setCollection={setCollection}
-        search={search}
-        setSearch={setSearch}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        count={count}
-      />
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Main
+              collection={collection}
+              setCollection={setCollection}
+              search={search}
+              setSearch={setSearch}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              count={count}
+            />
+          </Route>
+        </Switch>
+      </Router>
       <Footer />
     </>
   );

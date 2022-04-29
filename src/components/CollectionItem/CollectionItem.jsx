@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CollectionItem.css';
 
 export default function CollectionItem({ item }) {
@@ -14,8 +15,25 @@ export default function CollectionItem({ item }) {
   return (
     <>
       <figure>
-        <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
-        <figcaption>{`${alt} by ${artist}.`}</figcaption>
+        <Link
+          to={{ pathname: item.imageLink }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
+        </Link>
+        <figcaption>
+          {`${alt} by `}
+          <Link
+            to={{
+              pathname: `https://www.instagram.com/${item.artistInstagram}/`,
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>{artist}</span>
+          </Link>
+        </figcaption>
       </figure>
     </>
   );
