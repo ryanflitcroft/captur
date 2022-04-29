@@ -1,0 +1,16 @@
+export default {
+  id: '1b3d56',
+  width: 400,
+  height: 500,
+  color: '#3d3d3d',
+  blurHash: 's0rand0m',
+  description: 'a nice image i took',
+  altDescription: 'green tree in the forest',
+  imageUrlReg: 'https://images.unsplash.com/photo-1573828562803-1d582aa6ab6a',
+  imageUrlSm: 'https://images.unsplash.com/photo-1573828562803-1d582aa6ab6a?',
+  imageLink: 'https://unsplash.com/photos/fkL_jC8rUGI',
+  artistNameFirst: 'ryan',
+  artistNameLast: 'flitcroft',
+  artistLink: 'https://unsplash.com/@cristofer',
+  artistInstagram: 'https://www.instagram.com/ryanboyy/',
+};

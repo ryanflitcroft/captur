@@ -31,7 +31,7 @@ export default function CollectionItem({ item }) {
           {' by '}
           <Link
             to={{
-              pathname: item.artistUnsplash,
+              pathname: item.artistLink,
             }}
             target="_blank"
             rel="noopener noreferrer"
