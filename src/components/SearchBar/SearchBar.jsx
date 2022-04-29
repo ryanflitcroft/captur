@@ -18,6 +18,7 @@ export default function SearchBar({
     setIsLoading(true);
     const collection = await requestUnsplash(search, count);
     setCollection(collection);
+    setSearch('');
     setIsLoading(false);
   }
 

@@ -1,7 +1,19 @@
 form {
+  position: relative;
+  inset: -3.25em 0;
   text-align: center;
 }
 
 form label {
   display: block;
+}
+
+form input {
+  text-align: center;
+}
+
+button {
+  margin: 0 0.25em;
+  padding: 0.065em 1em;
+  cursor: pointer;
 }
