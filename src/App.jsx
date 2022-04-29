@@ -14,12 +14,14 @@ export default function App() {
 
   useEffect(() => {
     async function getdata() {
+      setIsLoading(true);
       const collectionData = await requestUnsplash(
         defaultQuery[randomNum(defaultQuery.length)],
         count
       );
       setHeaderImg(collectionData[randomNum(count)].imageUrlSm);
       setCollection(collectionData);
+      setIsLoading(false);
     }
     getdata();
   }, []);

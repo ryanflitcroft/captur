@@ -28,7 +28,9 @@ export default function SearchBar({
         aria-label="search Unsplash images by keyword"
         onSubmit={handleSubmit}
       >
-        <label htmlFor="search">Browse Unsplash images:</label>
+        <label htmlFor="search">
+          Browse <strong>Unsplash</strong> images:
+        </label>
         <input
           name="search"
           type="text"
