@@ -10,9 +10,11 @@ figure {
 img {
   margin: 0.5em 0;
   border: 1em solid whitesmoke;
-  border-bottom: 2.5em solid whitesmoke;
+  border-bottom: 4em solid whitesmoke;
 }
 
 figcaption {
+  position: relative;
+  bottom: 4em;
   width: 425px;
 }

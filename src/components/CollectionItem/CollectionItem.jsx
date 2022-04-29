@@ -10,7 +10,9 @@ export default function CollectionItem({ item }) {
     : 'photograph';
   alt = alt[0].toUpperCase() + alt.substring(1);
 
-  const artist = `${item.artistNameFirst} ${item.artistNameLast}`;
+  const artist = item.artistNameLast
+    ? `${item.artistNameFirst} ${item.artistNameLast}`
+    : item.artistNameFirst;
 
   return (
     <>
@@ -24,15 +26,19 @@ export default function CollectionItem({ item }) {
         </Link>
         <figcaption>
           {`${alt} by `}
-          <Link
-            to={{
-              pathname: `https://www.instagram.com/${item.artistInstagram}/`,
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {item.artistInstagram ? (
+            <Link
+              to={{
+                pathname: `https://www.instagram.com/${item.artistInstagram}/`,
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{artist}</span>
+            </Link>
+          ) : (
             <span>{artist}</span>
-          </Link>
+          )}
         </figcaption>
       </figure>
     </>
