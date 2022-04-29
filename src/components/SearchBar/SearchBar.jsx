@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchBar.css';
 import requestUnsplash from '../../services/UnsplashService';
 
 export default function SearchBar({
@@ -26,16 +27,14 @@ export default function SearchBar({
         aria-label="search Unsplash images by keyword"
         onSubmit={handleSubmit}
       >
-        <label htmlFor="search">
-          Browse Unsplash images:
-          <input
-            name="search"
-            type="text"
-            placeholder="search by keyword"
-            value={search}
-            onChange={handleChange}
-          />
-        </label>
+        <label htmlFor="search">Browse Unsplash images:</label>
+        <input
+          name="search"
+          type="text"
+          placeholder="search by keyword"
+          value={search}
+          onChange={handleChange}
+        />
         <button>Search</button>
       </form>
     </>

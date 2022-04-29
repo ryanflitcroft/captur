@@ -1,4 +1,5 @@
 import React from 'react';
+import './CollectionItem.css';
 
 export default function CollectionItem({ item }) {
   const alt = item.altDescription
@@ -13,7 +14,9 @@ export default function CollectionItem({ item }) {
     <>
       <figure>
         <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
-        <figcaption>{`${alt} by ${artist}`}</figcaption>
+        <figcaption>{`${
+          alt[0].toUpperCase() + alt.substring(1)
+        } by ${artist}.`}</figcaption>
       </figure>
     </>
   );
