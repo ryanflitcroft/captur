@@ -16,5 +16,7 @@ img {
 figcaption {
   position: relative;
   bottom: 4em;
-  width: 425px;
+  max-width: 400px;
+  max-height: 2.75em;
+  overflow-y: scroll;
 }

@@ -1,6 +1,6 @@
 import handleUnsplashData from '../utils/handleUnsplashData';
 
-const url = 'https://api.unsplash.com/photos/random/?';
+const url = 'https://api.unsplash.com/photos/random/?orientation=squarish&';
 const headers = {
   headers: {
     Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
