@@ -25,7 +25,7 @@ export default function CollectionItem({ item }) {
         >
           <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
         </Link>
-        <figcaption>
+        <figcaption aria-label="image description provided by photographer.">
           {alt}
           <br />
           {' by '}

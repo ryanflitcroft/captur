@@ -5,7 +5,7 @@ import './CollectionList.css';
 export default function CollectionList({ collection }) {
   return (
     <>
-      <section>
+      <section aria-label="list of stuff">
         {collection.map((item, i) => (
           <CollectionItem key={`${item.id} ${i}`} item={item} />
         ))}

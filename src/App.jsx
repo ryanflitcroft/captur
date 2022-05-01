@@ -3,12 +3,12 @@ import requestUnsplash from './services/UnsplashService';
 import randomNum from './utils/randomNum';
 import Layout from './views/Layout/Layout';
 
-const query = window.matchMedia('(prefers-color-scheme: dark)');
-query.matches;
-query.addEventListener('change', (res) => {
-  console.log(res);
-  res.matches;
-});
+// const query = window.matchMedia('(prefers-color-scheme: dark)');
+// query.matches;
+// query.addEventListener('change', (res) => {
+//   console.log(res);
+//   res.matches;
+// });
 
 export default function App() {
   const [collection, setCollection] = useState([]);
