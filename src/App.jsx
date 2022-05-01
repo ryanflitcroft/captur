@@ -19,6 +19,14 @@ export default function App() {
 
   const defaultQuery = ['Portland', 'Oregon', 'PNW'];
 
+  async function updateCollection() {
+    setIsLoading(true);
+    const data = await requestUnsplash(search, count);
+    setCollection(data);
+    setSearch('');
+    setIsLoading(false);
+  }
+
   useEffect(() => {
     async function getdata() {
       setIsLoading(true);
@@ -38,12 +46,10 @@ export default function App() {
       <Layout
         collection={collection}
         headerImg={headerImg}
-        setCollection={setCollection}
         search={search}
         setSearch={setSearch}
         isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        count={count}
+        updateCollection={updateCollection}
       />
     </>
   );

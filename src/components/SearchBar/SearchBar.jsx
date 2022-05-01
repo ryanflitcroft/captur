@@ -1,25 +1,14 @@
 import React from 'react';
 import './SearchBar.css';
-import requestUnsplash from '../../services/UnsplashService';
 
-export default function SearchBar({
-  search,
-  setSearch,
-  setCollection,
-  setIsLoading,
-  count,
-}) {
+export default function SearchBar({ search, setSearch, updateCollection }) {
   function handleChange(e) {
     setSearch(e.target.value);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
-    const collection = await requestUnsplash(search, count);
-    setCollection(collection);
-    setSearch('');
-    setIsLoading(false);
+    await updateCollection();
   }
 
   return (

@@ -6,12 +6,10 @@ import './Main.css';
 
 export default function Main({
   collection,
-  setCollection,
   search,
   setSearch,
   isLoading,
-  setIsLoading,
-  count,
+  updateCollection,
 }) {
   return (
     <>
@@ -19,9 +17,7 @@ export default function Main({
         <SearchBar
           search={search}
           setSearch={setSearch}
-          setCollection={setCollection}
-          setIsLoading={setIsLoading}
-          count={count}
+          updateCollection={updateCollection}
         />
         <Loading isLoading={isLoading} />
         <CollectionList collection={collection} />

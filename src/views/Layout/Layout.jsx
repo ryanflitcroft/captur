@@ -7,13 +7,11 @@ import './Layout.css';
 
 export default function Layout({
   collection,
-  setCollection,
   headerImg,
   search,
   setSearch,
+  updateCollection,
   isLoading,
-  setIsLoading,
-  count,
 }) {
   return (
     <>
@@ -23,12 +21,10 @@ export default function Layout({
           <Route path="/">
             <Main
               collection={collection}
-              setCollection={setCollection}
               search={search}
               setSearch={setSearch}
               isLoading={isLoading}
-              setIsLoading={setIsLoading}
-              count={count}
+              updateCollection={updateCollection}
             />
           </Route>
         </Switch>
