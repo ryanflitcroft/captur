@@ -25,7 +25,7 @@ export default function CollectionItem({ item }) {
         >
           <img src={item.imageUrlSm} alt={`${alt} by ${artist}`} />
         </Link>
-        <figcaption aria-label="image description provided by photographer.">
+        <figcaption aria-label="image description provided by photographer">
           {alt}
           <br />
           {' by '}
@@ -40,7 +40,7 @@ export default function CollectionItem({ item }) {
               backgroundImage: `linear-gradient(transparent 0%, transparent 90%, ${item.color} 90%, ${item.color} 100%)`,
             }}
           >
-            <span>{artist}</span>
+            <span aria-label="name of photographer">{artist}</span>
           </Link>
         </figcaption>
       </figure>

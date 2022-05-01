@@ -5,7 +5,7 @@ import { mockData1, mockData2 } from '../../../fixtures/mockData';
 const PER_PAGE = 30;
 
 describe('render component Main', () => {
-  it('should render elements p, section, input, button, figure. On button click.', async () => {
+  it('should render elements p, section, input, button, figure, a, img, figcaption, a, span', async () => {
     render(<App />);
 
     const p = screen.getByText(/...loading/i);
@@ -17,10 +17,14 @@ describe('render component Main', () => {
 
     const figures = await screen.findAllByRole('figure');
     const imageLinks = await screen.findAllByTitle(/view on unsplash/i);
-    const images = await screen.findAllByAltText(/[a-z].by.[a-z]/i);
+    const images = await screen.findAllByAltText(/[a-z]* by [a-z]*/i);
     const figcaptions = await screen.findAllByLabelText(
-      /image description provided by photographer./i
+      /image description provided by photographer/i
     );
+    const captionLinks = await screen.findAllByTitle(
+      /view [a-z]* on unsplash/i
+    );
+    const spans = await screen.findAllByLabelText(/name of photographer/i);
 
     expect(p.textContent).toBe('');
     expect(section.childElementCount).toBe(PER_PAGE);
@@ -51,6 +55,12 @@ describe('render component Main', () => {
       expect(element.childElementCount).toBe(2);
     });
 
+    captionLinks.forEach((element) => {
+      expect(element.nodeName).toBe('A');
+      expect(element.childElementCount).toBe(1);
+      expect(element).toHaveAttribute('href');
+    });
+
     expect(imageLinks[0]).toHaveAttribute('href', `${mockData1[0].links.html}`);
     expect(images[0]).toHaveAttribute('src', `${mockData1[0].urls.small}`);
     expect(figcaptions[0]).toHaveTextContent(
@@ -58,6 +68,11 @@ describe('render component Main', () => {
         1
       )} by ${mockData1[0].user.first_name} ${mockData1[0].user.last_name}`
     );
+    expect(captionLinks[0]).toHaveAttribute(
+      'href',
+      `${mockData1[0].user.links.html}`
+    );
+    expect(spans[0]).toHaveTextContent(`${mockData1[0].user.first_name}`);
   });
 
   it('should render different data on button click, based on user input', async () => {
@@ -78,8 +93,12 @@ describe('render component Main', () => {
     const imageLinks = await screen.findAllByTitle(/view on unsplash/i);
     const images = await screen.findAllByAltText(/[a-z].by.[a-z]/i);
     const figcaptions = await screen.findAllByLabelText(
-      /image description provided by photographer./i
+      /image description provided by photographer/i
     );
+    const captionLinks = await screen.findAllByTitle(
+      /view [a-z]* on unsplash/i
+    );
+    const spans = await screen.findAllByLabelText(/name of photographer/i);
 
     expect(input).toHaveDisplayValue('');
     expect(imageLinks[0]).toHaveAttribute('href', `${mockData2[0].links.html}`);
@@ -89,5 +108,10 @@ describe('render component Main', () => {
         1
       )} by ${mockData2[0].user.first_name} ${mockData2[0].user.last_name}`
     );
+    expect(captionLinks[0]).toHaveAttribute(
+      'href',
+      `${mockData2[0].user.links.html}`
+    );
+    expect(spans[0]).toHaveTextContent(`${mockData2[0].user.first_name}`);
   });
 });

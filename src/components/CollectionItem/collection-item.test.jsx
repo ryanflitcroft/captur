@@ -1,6 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import CollectionItem from './CollectionItem';
+import { render, screen, waitFor } from '@testing-library/react';
+import App from '../../App';
 
 describe('render component CollectionItem', () => {
-  it('', async () => {});
+  it('should render elements figure, a, img, figcaption, a, span', async () => {
+    render(<App />);
+
+    waitFor(() => {
+      screen.getAllByRole('figure');
+      screen.getAllByTitle(/view on unsplash/i);
+      screen.getAllByAltText(/[a-z]* by [a-z]*/i);
+      screen.getAllByLabelText(/image description provided by photographer/i);
+      screen.getAllByTitle(/view [a-z]* on unsplash/i);
+      screen.getAllByLabelText(/name of photographer/i);
+    });
+  });
 });

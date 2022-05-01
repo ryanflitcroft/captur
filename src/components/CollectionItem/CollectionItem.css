@@ -27,8 +27,6 @@ figcaption {
 
 figcaption a {
   text-decoration: none;
-  /* background-image: linear-gradient(transparent 0%, transparent 90%, hotpink 90%, hotpink 100%); */
-
   background-repeat: no-repeat;
   background-size: 0% 100%;
   background-position-x: right;
@@ -38,4 +36,8 @@ figcaption a {
 figcaption a:hover {
   background-size: 100% 100%;
   background-position-x: left;
+}
+
+figcaption span {
+  clear: right;
 }
