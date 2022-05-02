@@ -19,7 +19,8 @@ export default function Main({
           setSearch={setSearch}
           updateCollection={updateCollection}
         />
-        <Loading isLoading={isLoading} />
+        {isLoading && <Loading />}
+
         <CollectionList collection={collection} />
       </main>
     </>

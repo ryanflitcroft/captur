@@ -1,10 +1,10 @@
 import React from 'react';
 import './Loading.css';
 
-export default function Loading({ isLoading }) {
+export default function Loading() {
   return (
     <>
-      <p>{isLoading && '...Loading'}</p>
+      <p>...Loading</p>
     </>
   );
 }

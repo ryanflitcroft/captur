@@ -26,7 +26,6 @@ describe('render component Main', () => {
     );
     const spans = await screen.findAllByLabelText(/name of photographer/i);
 
-    expect(p.textContent).toBe('');
     expect(section.childElementCount).toBe(PER_PAGE);
     expect(section.nodeName).toBe('SECTION');
     expect(input).toHaveDisplayValue('');

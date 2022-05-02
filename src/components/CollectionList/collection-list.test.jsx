@@ -1,6 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import CollectionList from './CollectionList';
+import { render, screen, waitFor } from '@testing-library/react';
+import App from '../../App';
+import { mockData1 } from '../../fixtures/mockData';
 
 describe('render component CollectionList', () => {
-  it('', async () => {});
+  it('should render elements section', async () => {
+    render(<App />);
+    const section = screen.getByRole('region');
+    await screen.findAllByRole('figure');
+    expect(section.childElementCount).toEqual(mockData1.length);
+  });
 });
