@@ -23,6 +23,7 @@ export default function App() {
     setIsLoading(true);
     const data = await requestUnsplash(search, count);
     setCollection(data);
+    setHeaderImg(data[randomNum(count)]);
     setSearch('');
     setIsLoading(false);
   }
