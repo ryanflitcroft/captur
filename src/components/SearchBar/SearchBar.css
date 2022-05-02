@@ -1,0 +1,30 @@
+form {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 3.5em;
+  background: #3d3d3d;
+  text-align: center;
+  z-index: 1;
+}
+
+label {
+  display: block;
+  color: whitesmoke;
+  margin: 0.25em;
+}
+
+label span {
+  font-weight: bolder;
+  color: whitesmoke;
+}
+
+form input {
+  text-align: center;
+}
+
+button {
+  margin: 0 0.25em;
+  padding: 0.065em 1em;
+  cursor: pointer;
+}

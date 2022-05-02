@@ -1,0 +1,43 @@
+figure {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1em;
+}
+
+figure:hover {
+  transform: scale(1.015);
+}
+
+img {
+  margin: 0.5em 0;
+  border: 1em solid whitesmoke;
+  border-bottom: 4em solid whitesmoke;
+}
+
+figcaption {
+  position: relative;
+  bottom: 4em;
+  max-width: 400px;
+  max-height: 2.75em;
+  overflow-y: scroll;
+}
+
+figcaption a {
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position-x: right;
+  transition: background-size 300ms;
+}
+
+figcaption a:hover {
+  background-size: 100% 100%;
+  background-position-x: left;
+}
+
+figcaption span {
+  clear: right;
+}
