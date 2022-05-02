@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
+import '../../fixtures/matchMedia.mock';
 import App from '../../App';
 import { mockData1 } from '../../fixtures/mockData';
 

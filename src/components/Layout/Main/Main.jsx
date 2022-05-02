@@ -20,7 +20,6 @@ export default function Main({
           updateCollection={updateCollection}
         />
         {isLoading && <Loading />}
-
         <CollectionList collection={collection} />
       </main>
     </>

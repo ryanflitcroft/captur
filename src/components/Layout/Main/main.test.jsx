@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '../../../fixtures/matchMedia.mock';
 import App from '../../../App';
 import { mockData1, mockData2 } from '../../../fixtures/mockData';
 const PER_PAGE = 30;
