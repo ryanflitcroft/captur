@@ -16,3 +16,4 @@ jobs:
     - run: npm test
       env:
         CI: true
+        UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
